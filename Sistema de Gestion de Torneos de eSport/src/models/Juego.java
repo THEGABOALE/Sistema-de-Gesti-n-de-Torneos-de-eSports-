@@ -1,4 +1,5 @@
 package models;
+import java.util.Objects;
 
 public final class Juego {
     private final String nombre;

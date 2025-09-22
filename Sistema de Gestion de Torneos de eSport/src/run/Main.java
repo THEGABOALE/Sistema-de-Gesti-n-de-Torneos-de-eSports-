@@ -53,3 +53,4 @@ public class Main {
         System.out.println("Equipo aún existe: " + jaguars);
         System.out.println("Jugador aún existe: " + p1);
     }
+}

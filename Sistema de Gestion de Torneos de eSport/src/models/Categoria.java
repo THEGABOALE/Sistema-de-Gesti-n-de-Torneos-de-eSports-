@@ -6,20 +6,20 @@ public final class Categoria {
     private final String nombre;
 
     public Categoria(String nombre) {
-        if (nombre == null || nombre.isBlank()) {
+        if (nombre == null) {
             throw new IllegalArgumentException("Nombre de categoría requerido");
-            this.nombre = nombre.trim();
         }
+        nombre = nombre.trim();          // normaliza primero
+        if (nombre.isEmpty()) {          // valida vacío después de trim
+            throw new IllegalArgumentException("Nombre de categoría requerido");
+        }
+        this.nombre = nombre;            // SIEMPRE se alcanza
     }
 
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombre() { return nombre; }
 
     @Override
-    public String toString() {
-        return "Categoría{" + "nombre=" + nombre + '}';
-    }
+    public String toString() { return "Categoría{nombre=" + nombre + "}"; }
 
     @Override
     public boolean equals(Object o) {
